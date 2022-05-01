@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Machine Teaching</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="makeObject()">
+
+    <label for="objName">Teach me about </label>
+    <input type="text" id="objName"><br>
+    What color is it? <br>
+    <button onclick="setColor()">Red</button><button onclick="setColor()">Orange</button><button onclick="setColor()">Yellow</button><button onclick="setColor()">Green</button><button onclick="setColor()">Blue</button><button onclick="setColor()">Purple</button>
+    <br><button onclick="setColor()">White</button><button onclick="setColor()">Black</button><button onclick="setColor()">Gray</button><button onclick="setColor()">Brown</button>
+    <br>
+    Where could I find it? <br>
+    <button onclick="setLocation()">Inside</button><button onclick="setLocation()">Outside</button><button onclick="setLocation()">Either</button>
+    <br>
+    How big is it? <br>
+    <button onclick="setSize()">Smaller than Handheld</button><button onclick="setSize()">Handheld</button><button onclick="setSize()">Average</button><button onclick="setSize()">As Big as a Human</button><button onclick="setSize()">Bigger than a Human</button><button onclick="setSize()">Much Bigger than a Human</button>
+    <br>
+    Is it alive? <br>
+    <button onclick="setAliveTrue()">Yes</button><button onclick="setAliveFalse()">No</button>
+    <br>
+    Does it make sounds? <br>
+    <button onclick="setSoundTrue()">Yes</button><button onclick="setSoundFalse()">No</button>
+    <br>
+    Can it move? <br>
+    <button onclick="setMoveTrue()">Yes</button><button onclick="setMoveFalse()">No</button>
+<br><br>
+    <button onclick="debugShow()">
+      Show Traits
+    </button><br>
+    <div id="showspace">
+
+    </div>
+    <button onClick="recordThing()">
+      Download Record
+    </button>
+
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script>
+
+    let thisThing;
+
+    function makeObject(){
+      thisThing = {name:null, color:null, location:null, size:null, isAlive:null, makeSound:null, canMove:null};
+    }
+
+    function setName(){
+      thisThing.name = document.getElementById("objName").value;
+      console.log(document.getElementById("objName").value);
+    }
+
+    function setColor(){
+     thisThing.color = $(event.target).text().trim();
+     console.log($(event.target).text().trim());
+    }
+
+    function setLocation(){
+     thisThing.location = $(event.target).text().trim();
+     console.log($(event.target).text().trim());
+    }
+
+    function setSize(){
+      thisThing.size = $(event.target).text().trim();
+      console.log($(event.target).text().trim());
+    }
+
+    function setAliveTrue(){
+      thisThing.isAlive = true;
+      console.log("true");
+    }
+
+    function setAliveFalse(){
+      thisThing.isAlive = false;
+      console.log("false");
+    }
+
+    function setSoundTrue(){
+      thisThing.makeSound = true;
+      console.log("true");
+    }
+
+    function setSoundFalse(){
+      thisThing.makeSound = false;
+      console.log("false");
+    }
+
+    function setMoveTrue(){
+      thisThing.canMove = true;
+      console.log("true");
+    }
+
+    function setMoveFalse(){
+      thisThing.canMove = false;
+      console.log("false");
+    }
+
+    function debugShow(){
+      setName();
+      console.log("showing object")
+      document.getElementById("showspace").innerHTML = thisThing.name + "<br>" + thisThing.color + "<br>" + thisThing.location + "<br>" + thisThing.size + "<br>" + thisThing.isAlive + "<br>" + thisThing.makeSound + "<br>" + thisThing.canMove;
+      console.log(JSON.stringify(thisThing));
+    }
+
+    function recordThing(){
+      var thisThingJ = JSON.stringify(thisThing);
+      var file = new Blob(['file text'], {type: JSON});
+      thisThingJ.href = URL.createObjectURL(file);
+      thisThingJ.download = "database";
+    }
+
+
+  </script>
+</html>
