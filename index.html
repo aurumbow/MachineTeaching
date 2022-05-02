@@ -63,8 +63,10 @@
     }
 
     function setName(){
-      thisThing.name = document.getElementById("objName").value;
-      console.log(document.getElementById("objName").value);
+      if (thisThing.name === null){
+        thisThing.name = document.getElementById("objName").value;
+        console.log(document.getElementById("objName").value);
+      }
     }
 
     function setColor(){
@@ -112,9 +114,11 @@
       console.log("false");
     }
     
-    function getTraits(){
-      thisThing.exTraits = document.getElementById("exTraitsIn").value;
-      console.log(document.getElementById("exTraitsIn").value);
+   function getTraits(){
+      if (thisThing.exTraits === null){
+        thisThing.exTraits = document.getElementById("exTraitsIn").value;
+        console.log(document.getElementById("exTraitsIn").value);
+      }
     }
 
     function debugShow(){
@@ -126,6 +130,8 @@
     }
 
     function pushObjArr(){
+      setName();
+      getTraits();
       let thisString = JSON.stringify(thisThing);
       myThings.push(thisString);
       document.getElementById('objName').value = ''
