@@ -31,6 +31,9 @@
     <br>
     Can it move? <br>
     <button onclick="setMoveTrue()">Yes</button><button onclick="setMoveFalse()">No</button>
+    <br>
+    <label for="exTraitsIn">Additional Traits: </label>
+    <input type="text" id="exTraitsIn">
     <br><br>
     <button onclick="debugShow()">
       Show Traits
@@ -56,7 +59,7 @@
     let thisThing;
 
     function makeObject(){
-      thisThing = {name:null, color:null, location:null, size:null, isAlive:null, makeSound:null, canMove:null};
+      thisThing = {name:null, color:null, location:null, size:null, isAlive:null, makeSound:null, canMove:null, exTraits:null};
     }
 
     function setName(){
@@ -108,11 +111,17 @@
       thisThing.canMove = false;
       console.log("false");
     }
+    
+    function getTraits(){
+      thisThing.exTraits = document.getElementById("exTraitsIn").value;
+      console.log(document.getElementById("exTraitsIn").value);
+    }
 
     function debugShow(){
       setName();
+      getTraits();
       console.log("showing object")
-      document.getElementById("showspace").innerHTML = "Name: " + thisThing.name + "<br>Color: " + thisThing.color + "<br>Location: " + thisThing.location + "<br>Size: " + thisThing.size + "<br>Alive: " + thisThing.isAlive + "<br>Makes noises: " + thisThing.makeSound + "<br>Can move: " + thisThing.canMove;
+      document.getElementById("showspace").innerHTML = "Name: " + thisThing.name + "<br>Color: " + thisThing.color + "<br>Location: " + thisThing.location + "<br>Size: " + thisThing.size + "<br>Alive: " + thisThing.isAlive + "<br>Makes noises: " + thisThing.makeSound + "<br>Can move: " + thisThing.canMove + "<br> Extra traits: " + thisThing.exTraits;
       console.log(JSON.stringify(thisThing));
     }
 
