@@ -1,0 +1,17 @@
+I took a while to really get started on this project - partially because I was completely swamped with work from outside sources and partially because as we progress through year three (!) of the pandemic I find it harder to come up with ideas that I feel are worth committing to. Something that helped a lot was going through the course content and my own older projects again to re-gauge my interest in certain topics and think about what I could make from those areas of interest. 
+
+The original version of this project was going to be something completely different than what it turned out as! Because we were told the goal of this project was to learn/develop/evolve as coders and because my main interest is games and other interactive programs, I wanted to try focusing on Unity and expanding it by using plugins and features that are common but that I had never used before but had interest in because I had seen them previously in Atelier.
+
+The concept was to create an online multiplayer non-game where each player controlled a rolling ball through an environment that was capable of making a few sounds which would combine with other players sounds to form music or communication. The main things I wanted to explore were non-verbal communication, getting accustomed to designing for multiple players using tools like Photon, and exploring the audio spatialization in Unity. Since I was already used to working with the basics of Unity I decided to jump in and begin setting up a basic multiplayer space before delving into the details of audio spatializers or managing player-to-player interactions. 
+
+Photon is a networking service that allows Unity games to run in a multiplayer online setting by having a number of scripts and other components implemented in the Unity build that connect to a server hosted by Photon itself. The final version allows up to 20 people to connect to the game at a time, and the developers have posted many walkthroughs and tutorials online to help people set it up. However, the bug documentation was very sparse which became a problem for me while working on the project.
+
+![image](https://user-images.githubusercontent.com/45271891/166396113-ad48c93d-50c7-4a62-bb48-032eda275415.png)
+The title screen of the game made with photon. The text in the lower left is connected to the photon server using a prepackaged script.
+
+![image](https://user-images.githubusercontent.com/45271891/166396174-27d90118-a6a2-4e57-9f78-1d625c840c5c.png)
+The empty level used in the first test build. I didn't want to overpopulate the file and cause lag because the first build was to make sure the connectivity worked.
+
+Things were going really well and I had the first test build of the game after a few days of setting up photon assets and troubleshooting minor bugs. However, when I tried to run the test build, it repeatedly encountered errors that prevented it from progressing past the menu screen into the actual game. After a long time researching, tweaking, and rebuilding did not solve the problem I took a step back and rethought the project. How important was it to the framing of this program that it be multi-user and could the interaction be managed with only one player? 
+
+I ultimately decided that I didn't like the concept as much with only one player and went through the modules again to decide on something else to make that would be relevant while not feeling like a flimsy backup option to the first idea. 
